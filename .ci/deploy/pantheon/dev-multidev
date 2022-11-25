@@ -20,6 +20,7 @@ then
   terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --pr-id=$PR_NUMBER --yes
 else
   # Push to the dev environment
+  git config --global --add safe.directory /__w/***/***
   terminus -n build:env:push "$TERMINUS_SITE.dev" --yes
 fi
 
